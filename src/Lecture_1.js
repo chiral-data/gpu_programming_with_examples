@@ -673,7 +673,7 @@ increment_by_one[blockspergrid, threadsperblock](an_array)
         <FlexBox height="100%" flexDirection="column">
           <WelcomePage
             stars="Coding Session"
-            caption="The Example of Bandwidth"
+            caption="The Example of Bandwidth (Part 4)"
             title="Parallelism Comparison: CPU vs GPU"
           />
           <Box height={80} />
