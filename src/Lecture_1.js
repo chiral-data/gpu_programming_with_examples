@@ -13,8 +13,8 @@ import {
   Grid,
   Image,
   CodePane,
-  Link,
-  Quote
+  Link
+  // Quote
 } from "spectacle";
 import tomorrow from "react-syntax-highlighter/dist/cjs/styles/prism/tomorrow";
 
@@ -71,8 +71,8 @@ const WelcomePage = ({ stars, caption, caption2, title, title2, subtitle }) => (
     {caption2 && (
       <Heading margin="0px" fontSize={36} fontWeight={400} fontStyle={"italic"}>
         {caption2}
-      </Heading>)
-    }
+      </Heading>
+    )}
     <Heading margin="0px 32px" color="primary" fontSize="h3">
       {title}
     </Heading>
@@ -113,24 +113,23 @@ const GoogleColabLogoLink = () => (
   </>
 );
 
-const SketchSimilaritySearch = () => (
-  <>
-    <Box width={550} height={270} overflow={"hidden"}>
-      <Image
-        position={"relative"}
-        top={-50}
-        left={-20}
-        src="https://miro.medium.com/max/1400/0*LtCn9l019IeLViyP"
-        width={600}
-      />
-    </Box>
-  </>
-);
+// const SketchSimilaritySearch = () => (
+//   <>
+//     <Box width={550} height={270} overflow={"hidden"}>
+//       <Image
+//         position={"relative"}
+//         top={-50}
+//         left={-20}
+//         src="https://miro.medium.com/max/1400/0*LtCn9l019IeLViyP"
+//         width={600}
+//       />
+//     </Box>
+//   </>
+// );
 
 const LectureOne = () => {
   return (
     <Deck template={template} theme={theme} transitionEffect="fade">
-
       {/* Slide: Welcome */}
       <Slide>
         <FlexBox height="100%" flexDirection="column">
@@ -168,13 +167,6 @@ const LectureOne = () => {
             <ListItem>basic understanding of Python</ListItem>
           </UnorderedList>
         </UnorderedList>
-      </Slide>
-
-      {/* Slide: Questions */}
-      <Slide>
-        <FlexBox height="100%" flexDirection="column">
-          <WelcomePage stars="Feel Free to Ask Questions" />
-        </FlexBox>
       </Slide>
 
       {/* Slide: Contents */}
@@ -488,7 +480,10 @@ Assemble into image file
                 width={800}
               />
             </Box>
-            <SourceLinkNoText url="https://docs.nvidia.com/cuda/cuda-c-programming-guide/" desc="source: CUDA C++ Programming Guide" />
+            <SourceLinkNoText
+              url="https://docs.nvidia.com/cuda/cuda-c-programming-guide/"
+              desc="source: CUDA C++ Programming Guide"
+            />
           </FlexBox>
         </Grid>
       </Slide>
@@ -823,12 +818,16 @@ increment_by_one[blockspergrid, threadsperblock](an_array)
       <Slide>
         <Heading textAlign={"left"}>Wrap-ups</Heading>
         <UnorderedList fontSize={36}>
-          <ListItem>Bandwidth and throughput are important factors of parallel computing.</ListItem>
+          <ListItem>
+            Bandwidth and throughput are important factors of parallel
+            computing.
+          </ListItem>
           <ListItem>Parallelism and concurrency</ListItem>
           <ListItem>Data transfer between devices (Host/GPU) </ListItem>
           <UnorderedList fontSize={32}>
             <ListItem>
-              It could be the "I/O" bottleneck for a program involving gpu codes.
+              It could be the "I/O" bottleneck for a program involving gpu
+              codes.
             </ListItem>
             <ListItem>
               It should be carefully taken into account for program
