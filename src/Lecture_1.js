@@ -137,6 +137,13 @@ const LectureOne = () => {
         </FlexBox>
       </Slide>
 
+      {/* Slide: Questions */}
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <WelcomePage stars="Feel Free to Ask Questions" />
+        </FlexBox>
+      </Slide>
+
       {/* Slide: Prerequisites */}
       <Slide>
         <Heading textAlign={"left"}>Before We Start ...</Heading>
@@ -162,6 +169,8 @@ const LectureOne = () => {
           </UnorderedList>
         </UnorderedList>
       </Slide>
+
+      {}
 
       {/* Slide: Outline */}
       <Slide>
@@ -353,8 +362,8 @@ Assemble into image file
               homogeneous tasks performed simutaneousely
             </Text>
             <Text color="secondary" fontSize={28}>
-              Keywords <br /> multiple processor, new hardware, bandwidth,
-              throughput
+              Keywords <br /> multiple processor, new hardware, a large number
+              of tasks, bandwidth, throughput
             </Text>
           </Box>
           <Box backgroundColor="secondary">
@@ -368,7 +377,8 @@ Assemble into image file
               heterogeneous tasks organized in a proper way to be preformed
             </Text>
             <Text fontSize={28}>
-              Keywords <br /> single processor, thread switching
+              Keywords <br /> single processor, various types of tasks, thread
+              switching
             </Text>
           </Box>
         </Grid>
@@ -849,6 +859,9 @@ increment_by_one[blockspergrid, threadsperblock](an_array)
           <ListItem>
             Choose any technology of GPU Programming that fits best your
             application. (Python, C/C++, Fortran ...)
+          </ListItem>
+          <ListItem>
+            Further improvement on the example of molecular similarity searching
           </ListItem>
         </UnorderedList>
       </Slide>
