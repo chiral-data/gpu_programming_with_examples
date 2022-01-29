@@ -60,7 +60,7 @@ const SourceLinkNoText = ({ url, desc }) => (
   </>
 );
 
-const WelcomePage = ({ stars, caption, title, title2, subtitle }) => (
+const WelcomePage = ({ stars, caption, caption2, title, title2, subtitle }) => (
   <>
     <Heading margin="0px" fontSize="h3" color="primary">
       ✨ <i>{stars}</i> ✨
@@ -68,6 +68,11 @@ const WelcomePage = ({ stars, caption, title, title2, subtitle }) => (
     <Heading margin="0px" fontSize="h2">
       {caption}
     </Heading>
+    {caption2 && (
+      <Heading margin="0px" fontSize={36} fontWeight={400} fontStyle={"italic"}>
+        {caption2}
+      </Heading>)
+    }
     <Heading margin="0px 32px" color="primary" fontSize="h3">
       {title}
     </Heading>
@@ -125,13 +130,15 @@ const SketchSimilaritySearch = () => (
 const LectureOne = () => {
   return (
     <Deck template={template} theme={theme} transitionEffect="fade">
+
       {/* Slide: Welcome */}
       <Slide>
         <FlexBox height="100%" flexDirection="column">
           <WelcomePage
             stars="Coding Event at Engineer Cafe"
             caption="GPU Parallel Programming By Examples"
-            title="Qin Wan"
+            caption2="The Bandwidth of Parallel Computing"
+            title2="Qin Wan"
             subtitle="chiral.co.jp@gmail.com"
           />
         </FlexBox>
@@ -170,17 +177,13 @@ const LectureOne = () => {
         </FlexBox>
       </Slide>
 
-      {/* Slide: Outline */}
+      {/* Slide: Contents */}
       <Slide>
         <Heading textAlign={"left"}>Contents</Heading>
         <UnorderedList>
           <ListItem>History of GPU Programming</ListItem>
           <ListItem>CUDA and Numba</ListItem>
-          <ListItem>Examples of Code Session</ListItem>
-          <UnorderedList>
-            <ListItem>Bandwidth</ListItem>
-            <ListItem>Molecular Similary Searching</ListItem>
-          </UnorderedList>
+          <ListItem>Code Session: The Bandwidth of Parallel Computing</ListItem>
           <ListItem>Wrap-up and Discussion</ListItem>
         </UnorderedList>
       </Slide>
@@ -459,13 +462,6 @@ Assemble into image file
             <Text fontSize={28} fontWeight={700}>
               Application: Revival of Neural Networks
             </Text>
-            {/* <UnorderedList>
-              <ListItem fontSize={32}>AlexNet in 2012 <SourceLinkNoText url="https://en.wikipedia.org/wiki/AlexNet" desc="link" /></ListItem>
-                <UnorderedList>
-                  <ListItem fontSize={24}>A fast GPU-implementation of a CNN</ListItem>
-                  <ListItem fontSize={24}>Winner of ImageNet competition in 2012</ListItem>
-                </UnorderedList>
-            </UnorderedList> */}
             <Box paddingLeft={150}>
               <Image
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/ImageNet_error_rate_history_%28just_systems%29.svg/220px-ImageNet_error_rate_history_%28just_systems%29.svg.png"
@@ -478,17 +474,7 @@ Assemble into image file
               </Text>
             </Box>
           </Box>
-          {/* <FlexBox
-            flexDirection="row"
-            paddingTop={250}
-            paddingRight={30}
-            justifyContent="space-between"
-            flex="1">
-            <Image src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Nvidia_CUDA_Logo.jpg/300px-Nvidia_CUDA_Logo.jpg" width={180} /> 
-            <Image src="http://devcentralstag.wpengine.com/wordpress/media/2021/07/RocmLogo.png" width={180} /> 
-          </FlexBox> */}
         </Grid>
-        <Notes>1) Market of Processors, 2) not evanglist of CUDA </Notes>
       </Slide>
 
       {/* Slide CUDA */}
@@ -496,13 +482,13 @@ Assemble into image file
         <Heading textAlign={"left"}>CUDA for GPU Computing</Heading>
         <Grid gridTemplateColumns="1fr" gridColumnGap={15}>
           <FlexBox flexDirection="column" paddingTop={-20} flex={1}>
-            <Box maxHeight={540} overflowY={"hidden"}>
+            <Box maxHeight={540} overflowY={"hidden"} marginBottom={10}>
               <Image
                 src="https://docs.nvidia.com/cuda/cuda-c-programming-guide/graphics/gpu-computing-applications.png"
                 width={800}
               />
             </Box>
-            {/* <SourceLink text="NVIDIA A100 for HGX" url="https://www.nvidia.com/en-us/data-center/a100/" desc="source: NVIDIA A100" /> */}
+            <SourceLinkNoText url="https://docs.nvidia.com/cuda/cuda-c-programming-guide/" desc="source: CUDA C++ Programming Guide" />
           </FlexBox>
         </Grid>
       </Slide>
@@ -688,7 +674,7 @@ increment_by_one[blockspergrid, threadsperblock](an_array)
           <WelcomePage
             stars="Coding Session"
             caption="The Example of Bandwidth"
-            title="Rewrite as CUDA Kernel"
+            title="Parallelism Comparison: CPU vs GPU"
           />
           <Box height={80} />
           <NumbaLogoLink />
@@ -696,23 +682,21 @@ increment_by_one[blockspergrid, threadsperblock](an_array)
       </Slide>
 
       {/* Slide: Final Project */}
-      <Slide>
+      {/* <Slide>
         <FlexBox height="100%" flexDirection="column">
           <WelcomePage
             stars="Final Project"
             caption="Molecular Similarity Search"
           />
         </FlexBox>
-      </Slide>
+      </Slide> */}
 
       {/* Slide: Similarity Search */}
-      <Slide>
+      {/* <Slide>
         <Heading textAlign={"left"} fontSize="h1">
           Similarity Search
         </Heading>
         <Grid
-          // position="relative"
-          // top="6%"
           gridTemplateColumns="1fr 1fr"
           gridColumnGap={15}
         >
@@ -764,10 +748,10 @@ increment_by_one[blockspergrid, threadsperblock](an_array)
             />
           </Box>
         </Grid>
-      </Slide>
+      </Slide> */}
 
       {/* Slide: Data Preparation */}
-      <Slide>
+      {/* <Slide>
         <Heading textAlign={"left"} fontSize="h1">
           Data Preparation
         </Heading>
@@ -826,28 +810,25 @@ increment_by_one[blockspergrid, threadsperblock](an_array)
             </Quote>
           </Box>
         </Grid>
-      </Slide>
+      </Slide> */}
 
       {/* Slide: Coding Session Break */}
-      <Slide>
+      {/* <Slide>
         <FlexBox height="100%" flexDirection="column">
           <WelcomePage stars="Coding Session" caption="Final Project" />
         </FlexBox>
-      </Slide>
+      </Slide> */}
 
       {/* Slide: Wrap-up */}
       <Slide>
         <Heading textAlign={"left"}>Wrap-ups</Heading>
         <UnorderedList fontSize={36}>
-          <ListItem>Bandwidth and throughput</ListItem>
-          <UnorderedList fontSize={32}>
-            <ListItem>important factors of parallel computing.</ListItem>
-          </UnorderedList>
+          <ListItem>Bandwidth and throughput are important factors of parallel computing.</ListItem>
           <ListItem>Parallelism and concurrency</ListItem>
-          <ListItem>Data transfer between devices (host/GPU) </ListItem>
+          <ListItem>Data transfer between devices (Host/GPU) </ListItem>
           <UnorderedList fontSize={32}>
             <ListItem>
-              It could be the "I/O" bottleneck for a program involving gpu codes
+              It could be the "I/O" bottleneck for a program involving gpu codes.
             </ListItem>
             <ListItem>
               It should be carefully taken into account for program
@@ -856,10 +837,7 @@ increment_by_one[blockspergrid, threadsperblock](an_array)
           </UnorderedList>
           <ListItem>
             Choose any technology of GPU Programming that fits best your
-            application. (Python, C/C++, Fortran ...)
-          </ListItem>
-          <ListItem>
-            Further improvement on the example of molecular similarity searching
+            application (Python, C/C++, Fortran ...).
           </ListItem>
         </UnorderedList>
       </Slide>
