@@ -132,15 +132,8 @@ const LectureOne = () => {
             stars="Coding Event at Engineer Cafe"
             caption="GPU Parallel Programming By Examples"
             title="Qin Wan"
-            subtitle="Chiral Ltd."
+            subtitle="chiral.co.jp@gmail.com"
           />
-        </FlexBox>
-      </Slide>
-
-      {/* Slide: Questions */}
-      <Slide>
-        <FlexBox height="100%" flexDirection="column">
-          <WelcomePage stars="Feel Free to Ask Questions" />
         </FlexBox>
       </Slide>
 
@@ -170,7 +163,12 @@ const LectureOne = () => {
         </UnorderedList>
       </Slide>
 
-      {}
+      {/* Slide: Questions */}
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <WelcomePage stars="Feel Free to Ask Questions" />
+        </FlexBox>
+      </Slide>
 
       {/* Slide: Outline */}
       <Slide>
